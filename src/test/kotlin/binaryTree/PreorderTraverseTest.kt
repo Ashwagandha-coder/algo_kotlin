@@ -12,8 +12,7 @@ class PreorderTraverseTest {
         root.right = TreeNode(3)
 
         val expected = listOf(1, 2, 3)
-        val res = mutableListOf<Int>()
-        preorderTraverse(root, res)
+        val res = preorderTraverse(root)
 
         assertArrayEquals(expected.toIntArray(), res.toIntArray())
     }
@@ -24,8 +23,7 @@ class PreorderTraverseTest {
         val root: TreeNode? = null
 
         val expected = emptyList<Int>()
-        val res = mutableListOf<Int>()
-        preorderTraverse(root, res)
+        val res = preorderTraverse(root)
 
         assertArrayEquals(expected.toIntArray(), res.toIntArray())
     }

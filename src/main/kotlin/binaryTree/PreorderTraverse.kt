@@ -7,10 +7,18 @@ package binaryTree
  */
 
 
-fun preorderTraverse(root: TreeNode?, traverse: MutableList<Int>) {
-    root ?: return
+fun preorderTraverse(root: TreeNode?): List<Int> {
+    root ?: return listOf()
+    val nodes = mutableListOf<Int>()
 
-    traverse.add(root.value)
-    preorderTraverse(root.left, traverse)
-    preorderTraverse(root.right, traverse)
+    fun dfs(root: TreeNode?) {
+        root ?: return
+
+        nodes.add(root.value)
+        dfs(root.left)
+        dfs(root.right)
+    }
+    dfs(root)
+
+    return nodes
 }
