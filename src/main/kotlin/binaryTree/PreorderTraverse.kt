@@ -8,7 +8,7 @@ package binaryTree
 
 
 fun preorderTraverse(root: TreeNode?): List<Int> {
-    root ?: return listOf()
+    root ?: return emptyList()
     val nodes = mutableListOf<Int>()
 
     fun dfs(root: TreeNode?) {
